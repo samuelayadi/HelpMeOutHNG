@@ -44,9 +44,9 @@ function onAccessApproved(stream) {
       .catch((error) => {
         console.error("Error:", error);
       })
-      .finally(
-        (window.location.href = "https://helpmeout-iota.vercel.app/repository")
-      );
+      // .finally(
+      //   (window.location.href = "https://helpmeout-iota.vercel.app/repository")
+      // );
   };
 }
 

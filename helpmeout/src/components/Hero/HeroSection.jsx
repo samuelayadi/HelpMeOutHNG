@@ -22,7 +22,7 @@ const HeroSection = () => {
           </button>
         </div>
 
-        <div className='md:mt-14 lg:mt-8 hidden md:block'>
+        <div className='md:mt-14 lg:mt-8 block'>
           <ImgCluster />
         </div>
       </div>
