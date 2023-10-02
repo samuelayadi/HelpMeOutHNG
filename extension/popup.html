@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="stylesheet" href="./src/Fonts/font.css" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+    />
+    <style>
+      body {
+        width: 300px;
+        height: 490px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="p-4">
+      <div class="flex flex-col space-y-4">
+        <div class="flex justify-between items-center">
+          <div class="space-x-2 flex items-center">
+            <img src="./images/Logo.jpg" alt="" class="w-8 object-cover" />
+            <p class="text-primary font-bold text-lg">HelpMeOut</p>
+          </div>
+
+          <div class="flex space-x-2">
+            <button class="text-xl text-primary">
+              <span class="primary text-2xl">
+                <i class="bi bi-gear"></i>
+              </span>
+            </button>
+
+            <button class="">
+              <span class="text-[#928fab] text-2xl">
+                <i class="bi bi-x-circle"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <p class="text-[#413C6D] font-light text-[14px]">
+          This extension helps you record and share help videos with ease.
+        </p>
+      </div>
+
+      <div class="mt-10 flex flex-col space-y-6">
+        <div class="flex justify-center space-x-7">
+          <button class="flex flex-col space-y-2 justify-center items-center">
+            <span class="text-[#928fab]">
+              <i class="bi bi-pc-display-horizontal text-4xl"></i>
+            </span>
+            <p class="text-[#928FAB] text-sm font-semibold">Full screen</p>
+          </button>
+
+          <button
+            class="flex flex-col space-y-2 justify-center items-center"
+          >
+            <span class="text-primary">
+              <i class="bi bi-copy text-4xl"></i>
+            </span>
+            <p class="text-primary text-sm font-semibold">Current Tab</p>
+          </button>
+        </div>
+
+        <div class="px-4 py-2 rounded-xl border-2 border-primary">
+          <div class="justify-between items-center flex">
+            <div class="flex items-center space-x-2">
+              <span class="text-lg text-primary">
+                <i class="bi bi-camera-video"></i>
+              </span>
+              <p class="font-semibold">Camera</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-4 py-2 rounded-xl border-2 border-primary">
+          <div class="justify-between items-center flex">
+            <div class="flex items-center space-x-2">
+              <span class="text-lg text-primary">
+                <i class="bi bi-mic"></i>
+              </span>
+              <p class="font-semibold">Audio</p>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="w-full py-2 px-4 text-center rounded-xl bg-primary text-white"
+          id="startvideo"
+        >
+          Start Recording
+        </button>
+
+        <button
+          class="w-full py-2 px-4 text-center rounded-xl border-2 border-primary text-primary"
+          id="stopvideo"
+        >
+          Stop Recording
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/popup.js"></script>
+  </body>
+</html>

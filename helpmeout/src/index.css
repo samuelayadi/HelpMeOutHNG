@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Sora";
+}
+
+.font-inter {
+  font-family: "Inter";
+}
+
+.pattern {
+  background-image: radial-gradient(#B6B3C6 5.5px, transparent 5.5px);
+  filter: opacity(0.75);
+  background-size: 37px 37px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.pattern2 {
+  background-image: radial-gradient(#BAF6EB 5.5px, transparent 5.5px);
+  filter: opacity(0.75);
+  background-size: 37px 37px;
+  background-color: rgba(0, 0, 0, 0);
+}
