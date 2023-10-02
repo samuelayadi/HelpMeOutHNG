@@ -7,9 +7,25 @@ import { BsChevronDown, BsTelegram, BsWhatsapp } from "react-icons/bs";
 import BreadCrumb from "../../components/BreadCrumb";
 import { GoCopy } from "react-icons/go";
 import { BsFacebook } from "react-icons/bs";
+import clipboardCopy from "clipboard-copy";
+
 import Vid from "../../assets/images/banner3.jpg";
 
 const VideoDetails = () => {
+  const { id } = useParams();
+  const [video, setVideo]= useState({})
+
+  useEffect(()=>{
+    fetch("https://screen-record-api.onrender.com/api")
+    .then((res)=>res.json())
+    .then((data)=> setVideo(data.data[id-1]))
+  })
+
+  const copyVideoLink = () => {
+    clipboardCopy(video.path);
+  };
+
+  console.log(video)
   return (
     <>
       <section className="container px-2 mx-auto lg:px-4">
@@ -19,7 +35,7 @@ const VideoDetails = () => {
               <Logo />
               <>
                 <div className="space-x-3 items-center flex">
-                  <img
+                  <video
                     src={Default}
                     alt=""
                     className="w-8 h-8 hidden md:block"
@@ -37,14 +53,11 @@ const VideoDetails = () => {
 
           <div className="border-[1.5px] p-3 border-grey bg-[#FBFBFB] rounded-xl mt-4 mx-auto w-full md:border-[#ececec] md:shadow-md mt-10">
             <div className="border-[1.5px] border-grey mx-auto w-full h-96 xl:h-[500px] rounded-xl md:border-0">
-              <img
-                src={Vid}
+              <iframe
+                src={video.path}
                 alt=""
                 className="rounded-xl w-full h-full object-cover"
               />
-              <div className="px-3 py-1 absolute bg-[#B6B3C6] font-semibold rounded-lg ml-2 -mt-10 opacity-75">
-                00:34
-              </div>
             </div>
           </div>
 
@@ -63,16 +76,14 @@ const VideoDetails = () => {
             <div className="px-2 py-2 bg-[#f1f0f5] rounded-md flex items-center bg-[#fafafa] border border-[#929292] justify-between md:w-6/12 ">
               <div className="w-7/12 overflow-hidden xl:w-8/12">
                 <p className="opacity-75 line-clamp-1">
-                  https://samuelayadi.netlify.app/
+                  {video.path}
                 </p>
               </div>
-              <button className="px-6 py-1 border border-primary rounded flex items-center text-sm z-50 bg-white">
+              <button className="px-6 py-1 border border-primary rounded flex items-center text-sm z-50 bg-white" onClick={copyVideoLink}>
                 <GoCopy />
                 <p className="ml-3">Copy </p>
               </button>
             </div>
-
-
           </div>
 
           <div className="my-10">
@@ -94,8 +105,6 @@ const VideoDetails = () => {
               </button>
             </div>
           </div>
-
-          
         </div>
       </section>
     </>
