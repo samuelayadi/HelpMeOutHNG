@@ -1,8 +1,15 @@
 import React from "react";
 import NavBar from "../../components/SharedLayout/NavBar";
+import Footer from "../../components/SharedLayout/Footer";
+import { Link } from "react-router-dom";
 import { BsFacebook, BsTelegram, BsWhatsapp } from "react-icons/bs";
 import { PiNotePencil } from "react-icons/pi";
 import { GoCopy } from "react-icons/go";
+import Transcript from "../../components/Transcript";
+import Vid from "../../assets/images/banner3.jpg";
+import { FiPlayCircle } from "react-icons/fi";
+import {BiVolumeLow} from "react-icons/bi"
+import {IoSettingsOutline} from "react-icons/io5"
 
 const SaveVid = () => {
   return (
@@ -11,9 +18,9 @@ const SaveVid = () => {
         <div className="">
           <NavBar />
         </div>
-        <main className="mt-14 container mx-auto px-2 lg:px-4">
-          <div className="flex flex-col md:flex-row">
-            <div className="flex flex-col space-y-10">
+        <main className="mt-14 pb-10 container mx-auto px-2 lg:px-4">
+          <div className="flex flex-col gap-10 lg:flex-row">
+            <div className="flex flex-col space-y-10 w-full lg:w-1/2">
               <p className="text-3xl font-bold">Your Video is Ready!</p>
 
               <div className="flex flex-col space-y-2">
@@ -74,8 +81,74 @@ const SaveVid = () => {
                 </div>
               </div>
             </div>
+
+            <div className="space-y-10 w-full flex flex-col  lg:border-l border-[#cfcfcf] lg:w-1/2">
+              <div className="mx-auto  lg:w-10/12">
+                <div className="w-full h-72 border-grey rounded-xl border mx-auto">
+                  <img
+                    src={Vid}
+                    alt=""
+                    className="object-cover w-full h-60 rounded-t-xl"
+                  />
+                  <div className="flex px-6 justify-between mt-2 items-center">
+                    <p className="text mt-3 text-[#939393]">0:30 / 3:00</p>
+                    <div className="flex space-x-6">
+                      <button className="flex flex-col w-10 items-center justify-center">
+                        <span className="text-lg">
+                          <FiPlayCircle />
+                        </span>
+                        <p className="text-xs">Play</p>
+                      </button>
+
+                      <button className="flex flex-col w-10 items-center justify-center">
+                        <span className="text-lg">
+                          <BiVolumeLow />
+                        </span>
+                        <p className="text-xs">Volume</p>
+                      </button>
+
+                      <button className="flex flex-col w-10 items-center justify-center">
+                        <span className="text-lg">
+                          <IoSettingsOutline />
+                        </span>
+                        <p className="text-xs">Settings</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-16">
+                  <Transcript />
+                </div>
+              </div>
+            </div>
           </div>
         </main>
+        <section className="flex-col space-y-7 justify-center py-10 bg-[#fafafa]">
+          <div className="w-full justify-center mx-auto sm:w-10/12 md:w-8/12 lg:w-5/12">
+            <p className="text-lg font-semibold text-center w-full">
+              To ensure the availability and privacy of your video, we recommend
+              saving it to your account
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <button className="px-7 py-2 rounded-lg text-sm bg-primary text-white">
+              Save Video
+            </button>
+          </div>
+
+          <div className="justify-center flex">
+            <p className="text-[#7E7E7E] font-semibold text-lg">
+              Don't have an account?{" "}
+              <Link className="text-primary" to="/login">
+                Create account
+              </Link>
+            </p>
+          </div>
+        </section>
+        <div className="mt-16">
+          <Footer />
+        </div>
       </section>
     </>
   );

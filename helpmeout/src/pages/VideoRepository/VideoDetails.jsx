@@ -4,12 +4,11 @@ import Logo from "../../components/SharedLayout/Logo";
 import { Link } from "react-router-dom";
 import Default from "../../assets/images/profiledef.jpg";
 import { BsChevronDown, BsTelegram, BsWhatsapp } from "react-icons/bs";
+import Transcript from "../../components/Transcript"
 import BreadCrumb from "../../components/BreadCrumb";
 import { GoCopy } from "react-icons/go";
 import { BsFacebook } from "react-icons/bs";
 import clipboardCopy from "clipboard-copy";
-
-import Vid from "../../assets/images/banner3.jpg";
 
 const VideoDetails = () => {
   const { id } = useParams();
@@ -104,6 +103,10 @@ const VideoDetails = () => {
                 <p className="ml-3">Telegram </p>
               </button>
             </div>
+          </div>
+
+          <div className="">
+            <Transcript/>
           </div>
         </div>
       </section>
