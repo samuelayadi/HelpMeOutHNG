@@ -43,7 +43,10 @@ function onAccessApproved(stream) {
       })
       .catch((error) => {
         console.error("Error:", error);
-      });
+      })
+      .finally(
+        (window.location.href = "https://helpmeout-iota.vercel.app/repository")
+      );
   };
 }
 
@@ -77,3 +80,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     //  chrome.tabs.update(tabs[0].id, { url: newURL });
   }
 });
+
+
