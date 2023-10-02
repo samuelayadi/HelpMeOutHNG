@@ -12,7 +12,7 @@ function onAccessApproved(stream) {
       }
     });
 
-    window.location.href = "https://helpmeout-iota.vercel.app/repository";
+    // window.location.href = "https://helpmeout-iota.vercel.app/repository";
   };
 
   recorder.ondataavailable = function (event) {
