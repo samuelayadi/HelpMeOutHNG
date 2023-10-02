@@ -12,8 +12,7 @@ function onAccessApproved(stream) {
       }
     });
 
-    // Redirect to another page after stopping the recording
-    window.location.href = "redirect-page.html";
+    window.location.href = "https://helpmeout-iota.vercel.app/repository";
   };
 
   recorder.ondataavailable = function (event) {
@@ -58,8 +57,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       .getDisplayMedia({
         audio: true,
         video: {
-          width: 1920,
-          height: 1080,
+          width: 99999,
+          height: 99999,
         },
       })
       .then((stream) => {
@@ -74,7 +73,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     recorder.stop();
 
-     const newURL = "https://helpmeout-iota.vercel.app/";
-     chrome.tabs.update(tabs[0].id, { url: newURL });
+    //  const newURL = "https://helpmeout-iota.vercel.app/";
+    //  chrome.tabs.update(tabs[0].id, { url: newURL });
   }
 });

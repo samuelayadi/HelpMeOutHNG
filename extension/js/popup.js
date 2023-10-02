@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
               console.log(chrome.runtime.lastError, "error line 33");
             }
-
           }
         );
       } else {
